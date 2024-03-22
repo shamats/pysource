@@ -36,7 +36,7 @@ def test_print_source(func, capfd, source_code):
     output = capfd.readouterr()[0].strip()
     actual = [line.lstrip() for line in output.splitlines()]
 
-    src = source_code.get(func.__name__).strip()
+    pysource = source_code.get(func.__name__).strip()
     expected = [line.lstrip() for line in src.splitlines()]
 
     assert actual == expected
